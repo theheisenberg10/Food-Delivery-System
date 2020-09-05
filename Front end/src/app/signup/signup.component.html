@@ -1,0 +1,100 @@
+<p>signup works!</p>
+
+If you are hungry this is the  place to be
+
+
+<form [formGroup]="addForm" (ngSubmit)="signUp()"> 
+    <div class="form-group row">
+            <label for="name" class="col-lg-4 text-right font-weight-bold">
+                First Name :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="First Name" formControlName="name" />
+
+                <div *ngIf="submitted && addForm.controls.name.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.name.errors.required">
+                        First Name is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.name.errors.pattern">
+                        First Name must begin with Capital letter and less than 15 characters long..!
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+
+
+
+    <div class="form-group row">
+            <label for="name" class="col-lg-4 text-right font-weight-bold">
+                Mobile Number :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Mobile Number" formControlName="mob_no" />
+
+                <div *ngIf="submitted && addForm.controls.mob_no.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.mob_no.errors.required">
+                        Mobile No. is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.mob_no.errors.pattern">
+                         Mobile Number must be 10 digits and should be numeric..!
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+
+
+
+
+    <div class="form-group row">
+            <label for="name" class="col-lg-4 text-right font-weight-bold">
+                Password :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Password" formControlName="pass" />
+
+                <div *ngIf="submitted && addForm.controls.pass.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.pass.errors.required">
+                        Password is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.pass.errors.pattern">
+                         Password is invalid
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+
+
+    <div class="form-group row">
+            <label for="name" class="col-lg-4 text-right font-weight-bold">
+                Area of Residence :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Area" formControlName="area" />
+
+                <div *ngIf="submitted && addForm.controls.area.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.area.errors.required">
+                        Area is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.area.errors.pattern">
+                         Area is invalid
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    <div class="form-group">
+            <input class="btn btn-success" type="submit" name="submit_Signup"  value="Signup" (click)="signUp()">
+    </div>
+
+    </form>
+
